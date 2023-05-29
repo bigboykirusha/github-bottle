@@ -1,0 +1,18 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 30px;
+  padding: 0 15px;
+}
+
+.more {
+  width: 200px;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px 15px;
+  font-size: 24px;
+  background-color: azure;
+  border-radius: 10px;
+}

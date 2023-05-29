@@ -10,7 +10,7 @@ function App() {
   return (
     <Routes>
       <Route path={"/"} element={<MainLayout />}>
-        <Route path={"/git-bottle"} element={<Popular />} />
+        <Route path={"/"} element={<Popular />} />
         <Route path={"/battle"} element={<Battle />} />
         <Route path={"*"} element={<NotFound />} />
       </Route>
