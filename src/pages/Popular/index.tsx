@@ -5,43 +5,60 @@ import styles from "./Popular.module.scss";
 import { CATEGORIES } from "../../components/Sort";
 import Placeholder from "../../components/Placeholder";
 import { SortContext } from "../../context/SortContext";
+import Error from "../../components/Error";
+
+enum Status {
+  LOADING = "loading",
+  SUCCESS = "success",
+  ERROR = "error",
+}
 
 const Popular: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(Status.LOADING);
   const { categoryId, setCurrentPage, currentPage, items, setItems } =
     useContext(SortContext);
-
   useEffect(() => {
-    setIsLoading(true);
+    !items.length && setIsLoading(Status.LOADING);
     fetchRepos(CATEGORIES[categoryId], currentPage)
-      .then((data) => setItems((prevState) => [...prevState, ...data.items]))
-      .finally(() => {
-        setIsLoading(false);
+      .then((data) => {
+        setItems((prevState) => [...prevState, ...data.items]);
+        setIsLoading(Status.SUCCESS);
+      })
+      .catch((error) => {
+        console.log(error);
+        setIsLoading(Status.ERROR);
       });
-  }, [categoryId, currentPage, setItems]);
+    // eslint-disable-next-line
+  }, [categoryId, currentPage]);
 
   return (
     <>
       <div className={styles.content}>
-        {!isLoading
-          ? items.map((item, index) => {
-              const { name, owner, stargazers_count, forks, open_issues } =
-                item;
-              const { login, avatar_url } = owner;
-              return (
-                <PopularCard
-                  key={index}
-                  num={index}
-                  imageUrl={avatar_url}
-                  repoName={name}
-                  personName={login}
-                  stars={stargazers_count}
-                  forks={forks}
-                  issues={open_issues}
-                />
-              );
-            })
-          : [...new Array(8)].map((_, i) => <Placeholder key={i} />)}
+        {isLoading === Status.ERROR ? (
+          <Error />
+        ) : (
+          <>
+            {isLoading === Status.LOADING
+              ? [...new Array(8)].map((_, i) => <Placeholder key={i} />)
+              : items.map((item, index) => {
+                  const { name, owner, stargazers_count, forks, open_issues } =
+                    item;
+                  const { login, avatar_url } = owner;
+                  return (
+                    <PopularCard
+                      key={index}
+                      num={index}
+                      imageUrl={avatar_url}
+                      repoName={name}
+                      personName={login}
+                      stars={stargazers_count}
+                      forks={forks}
+                      issues={open_issues}
+                    />
+                  );
+                })}
+          </>
+        )}
       </div>
       <div
         className={styles.more}

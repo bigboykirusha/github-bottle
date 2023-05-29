@@ -8,9 +8,11 @@ const Sort: React.FC = () => {
   const { categoryId, setCategoryId, setCurrentPage, setItems } =
     useContext(SortContext);
   const onClickCategory = (i: number) => {
-    setCategoryId(i);
-    setCurrentPage(1);
-    setItems(Array(0));
+    if (i !== categoryId) {
+      setCategoryId(i);
+      setCurrentPage(1);
+      setItems(Array(0));
+    }
   };
   return (
     <div className={styles.categories}>
