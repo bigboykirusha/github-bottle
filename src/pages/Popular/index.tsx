@@ -32,7 +32,7 @@ const Popular: React.FC = () => {
   }, [categoryId, currentPage]);
 
   return (
-    <>
+    <div>
       <div className={styles.content}>
         {isLoading === Status.ERROR ? (
           <Error />
@@ -66,7 +66,7 @@ const Popular: React.FC = () => {
       >
         Load More
       </div>
-    </>
+    </div>
   );
 };
 

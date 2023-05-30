@@ -1,14 +1,15 @@
 .categories {
   ul {
     display: flex;
-    column-gap: 80px;
+    column-gap: 50px;
     li {
       cursor: pointer;
     }
   }
-
+  margin: 0 auto;
+  padding-right: 180px;
 }
 
 .active {
-  color: red;
+  color: #FFFFFF;
 }

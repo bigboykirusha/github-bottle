@@ -1,0 +1,12 @@
+.root {
+  display: flex;
+  margin: 0 20px;
+  padding-top: 10px;
+  justify-content: space-between;
+}
+
+.choose {
+  display: flex;
+  column-gap: 50px;
+  text-transform: uppercase;
+}

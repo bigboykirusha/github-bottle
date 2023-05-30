@@ -1,16 +1,13 @@
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
-  background-color: #61dafb;
+  background-color: #bb6262;
   margin: 20px auto;
   border-radius: 10px;
   max-width: 1400px;
+  padding-bottom: 20px;
   @media (max-width: 480px) {
     width: calc(100vw - 40px);
     margin: 20px auto;
   }
-}
-
-.content {
-  padding: 40px 0;
 }

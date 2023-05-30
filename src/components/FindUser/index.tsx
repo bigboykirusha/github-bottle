@@ -3,16 +3,18 @@ import styles from "./FindUser.module.scss";
 import { debounce } from "lodash";
 
 type FindUserProps = {
-  players: string[];
   setPlayers: React.Dispatch<React.SetStateAction<string[]>>;
 };
-const FindUser: React.FC<FindUserProps> = ({ players, setPlayers }) => {
+const FindUser: React.FC<FindUserProps> = ({ setPlayers }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [value, setValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const [isAdded, setIsAdded] = useState(false);
+
   const onClickClear = (): void => {
     inputRef.current?.focus();
     setSearchValue("");
+    setValue("");
   };
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -61,9 +63,16 @@ const FindUser: React.FC<FindUserProps> = ({ players, setPlayers }) => {
           </g>
         </svg>
       )}
-      <button onClick={() => setPlayers((prevState) => [...prevState, value])}>
-        ADD User {searchValue}
-      </button>
+      {!isAdded && (
+        <button
+          onClick={() => {
+            setPlayers((prevState) => [...prevState, value]);
+            setIsAdded(true);
+          }}
+        >
+          ADD User {searchValue}
+        </button>
+      )}
     </div>
   );
 };

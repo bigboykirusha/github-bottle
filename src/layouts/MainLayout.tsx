@@ -29,9 +29,7 @@ const MainLayout = () => {
         }}
       >
         <Header />
-        <div className={styles.content}>
-          <Outlet />
-        </div>
+        <Outlet />
       </SortContext.Provider>
     </div>
   );
