@@ -15,7 +15,7 @@
 .input {
   border: 1px solid rgba(0, 0, 0 , 0.1);
   padding: 13px 50px;
-  width: 400px;
+  width: 100%;
   border-radius: 10px;
   font-size: 16px;
   transition: all 0.2s ease-in-out;
@@ -52,5 +52,21 @@
   &:hover {
     cursor: pointer;
     opacity: .8;
+  }
+}
+
+.add__user {
+  width: 50px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 36px;
+  font-weight: normal;
+  padding-top: 2px;
+  color: brown;
+  transition: color 0.2s ease-in;
+  cursor: pointer;
+  &:hover {
+    background-color: #E2E2E2;
   }
 }

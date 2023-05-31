@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { fetchRepos } from "../../Utils/fetchRepos";
 import PopularCard from "../../components/PopularCard";
 import styles from "./Popular.module.scss";
-import { CATEGORIES } from "../../components/Sort";
+import Sort, { CATEGORIES } from "../../components/Sort";
 import Placeholder from "../../components/Placeholder";
 import { SortContext } from "../../context/SortContext";
 import Error from "../../components/Error";
@@ -33,6 +33,7 @@ const Popular: React.FC = () => {
 
   return (
     <div>
+      <Sort />
       <div className={styles.content}>
         {isLoading === Status.ERROR ? (
           <Error />
@@ -64,7 +65,7 @@ const Popular: React.FC = () => {
         className={styles.more}
         onClick={() => setCurrentPage((prevState) => prevState + 1)}
       >
-        Load More
+        MORE
       </div>
     </div>
   );

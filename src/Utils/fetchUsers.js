@@ -2,20 +2,20 @@ const id = "Iv1.2101e67078a4a173";
 const secret = "540048b2417d2420de59d7cfe8df965641ffb0c6";
 const params = `?client_id=${id}&client_secret=${secret}`;
 
-function getErrorMessage(message, username) {
+function getErrorMessage(message) {
   if (message === "Not Found") {
-    return `${username} doesn't exists`;
+    return false;
   }
 
   return message;
 }
 
-function getProfile(username) {
+export function getProfile(username) {
   return fetch(`https://api.github.com/users/${username}${params}`)
     .then((res) => res.json())
     .then((profile) => {
       if (profile.message) {
-        throw new Error(getErrorMessage(profile.message, username));
+        return false;
       }
 
       return profile;

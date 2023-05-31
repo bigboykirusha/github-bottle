@@ -20,17 +20,16 @@
 }
 
 .more {
-  width: 200px;
+
   text-align: center;
-  margin: 20px auto 0 auto;
-  padding: 10px 15px;
-  font-size: 24px;
+  margin: 20px 20px 0 20px;
+  padding: 10px;
+  font-size: 20px;
   background-color: azure;
   border-radius: 10px;
-  transition: color 0.3s ease-in;
+  transition: color 0.2s ease-in;
   cursor: pointer;
   &:hover {
-    background-color: black;
-    color: #FFFFFF;
+    background-color: #E2E2E2;
   }
 }

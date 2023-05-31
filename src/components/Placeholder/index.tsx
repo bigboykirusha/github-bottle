@@ -3,14 +3,14 @@ import ContentLoader from "react-content-loader";
 
 const Placeholder = () => (
   <ContentLoader
-    speed={2}
-    width={250}
-    height={415}
-    viewBox="0 0 250 415"
+    speed={3}
+    width={325}
+    height={493}
+    viewBox="0 0 325 493"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
   >
-    <rect x="5" y="5" rx="20" ry="20" width="240" height="405" />
+    <rect x="0" y="0" rx="10" ry="10" width="325" height="493" />
   </ContentLoader>
 );
 
