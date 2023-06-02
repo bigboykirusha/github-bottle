@@ -15,8 +15,16 @@ enum Status {
 
 const Popular: React.FC = () => {
   const [isLoading, setIsLoading] = useState(Status.LOADING);
-  const { categoryId, setCurrentPage, currentPage, items, setItems } =
+
+  const { pageOpen, categoryId, setCurrentPage, currentPage, items, setItems } =
     useContext(SortContext);
+
+  useEffect(() => {
+    !items.length && setIsLoading(Status.LOADING);
+    setItems(Array(0));
+    // eslint-disable-next-line
+  }, [pageOpen]);
+
   useEffect(() => {
     !items.length && setIsLoading(Status.LOADING);
     fetchRepos(CATEGORIES[categoryId], currentPage)

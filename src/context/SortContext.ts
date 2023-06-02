@@ -8,6 +8,7 @@ interface SortContextType {
   setCurrentPage: Dispatch<SetStateAction<number>>;
   items: Items[];
   setItems: Dispatch<SetStateAction<Items[]>>;
+  pageOpen: string;
 }
 export const SortContext = createContext<SortContextType>({
   categoryId: 0,
@@ -16,4 +17,5 @@ export const SortContext = createContext<SortContextType>({
   setCurrentPage: () => {},
   items: [],
   setItems: () => {},
+  pageOpen: window.location.href,
 });

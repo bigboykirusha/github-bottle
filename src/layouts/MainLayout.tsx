@@ -16,6 +16,7 @@ const MainLayout = () => {
   const [categoryId, setCategoryId] = useState<number>(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [items, setItems] = useState<Items[]>([]);
+  const [pageOpen, setPageOpen] = useState(window.location.href);
   return (
     <div className={styles.wrapper}>
       <SortContext.Provider
@@ -26,9 +27,10 @@ const MainLayout = () => {
           setCurrentPage,
           items,
           setItems,
+          pageOpen,
         }}
       >
-        <Header />
+        <Header setPageOpen={setPageOpen} />
         <Outlet />
       </SortContext.Provider>
     </div>
