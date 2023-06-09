@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/github-bottle/static/css/main.0bcf2d30.css",
-    "main.js": "/github-bottle/static/js/main.7bbefd20.js",
+    "main.css": "/github-bottle/static/css/main.c8037f2a.css",
+    "main.js": "/github-bottle/static/js/main.7259e9d2.js",
     "static/media/forks.svg": "/github-bottle/static/media/forks.6c01df0ded2cdb884feb23d9509ed22c.svg",
     "static/media/issues.svg": "/github-bottle/static/media/issues.a689f9da60555c46626fc97ce98af27e.svg",
     "index.html": "/github-bottle/index.html",
     "static/media/user.svg": "/github-bottle/static/media/user.4de56c2883516a9f28de5b70663e660e.svg",
     "static/media/star.svg": "/github-bottle/static/media/star.c5a326f9ec84b7d31c8ee125730b081d.svg",
-    "main.0bcf2d30.css.map": "/github-bottle/static/css/main.0bcf2d30.css.map",
-    "main.7bbefd20.js.map": "/github-bottle/static/js/main.7bbefd20.js.map"
+    "main.c8037f2a.css.map": "/github-bottle/static/css/main.c8037f2a.css.map",
+    "main.7259e9d2.js.map": "/github-bottle/static/js/main.7259e9d2.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bcf2d30.css",
-    "static/js/main.7bbefd20.js"
+    "static/css/main.c8037f2a.css",
+    "static/js/main.7259e9d2.js"
   ]
 }
