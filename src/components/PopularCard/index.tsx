@@ -12,6 +12,7 @@ type PopularCardProps = {
   stars: number;
   forks: number;
   issues: number;
+  htmlUrl: string;
 };
 
 const PopularCard: React.FC<PopularCardProps> = ({
@@ -22,11 +23,14 @@ const PopularCard: React.FC<PopularCardProps> = ({
   stars,
   forks,
   issues,
+  htmlUrl,
 }) => {
   return (
     <div className={styles.card}>
       <div className={styles.place}>#{num + 1}</div>
-      <img src={imageUrl} alt="avatar" />
+      <a target="_blank" rel="noopener noreferrer" href={htmlUrl}>
+        <img src={imageUrl} alt="avatar" />
+      </a>
       <div className={styles.title}>{repoName.toUpperCase()}</div>
       <div className={styles.data}>
         <div className={styles.item}>

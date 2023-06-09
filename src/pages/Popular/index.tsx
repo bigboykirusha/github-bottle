@@ -50,8 +50,14 @@ const Popular: React.FC = () => {
             {isLoading === Status.LOADING
               ? [...new Array(8)].map((_, i) => <Placeholder key={i} />)
               : items.map((item, index) => {
-                  const { name, owner, stargazers_count, forks, open_issues } =
-                    item;
+                  const {
+                    name,
+                    owner,
+                    stargazers_count,
+                    forks,
+                    open_issues,
+                    html_url,
+                  } = item;
                   const { login, avatar_url } = owner;
                   return (
                     <PopularCard
@@ -63,6 +69,7 @@ const Popular: React.FC = () => {
                       stars={stargazers_count}
                       forks={forks}
                       issues={open_issues}
+                      htmlUrl={html_url}
                     />
                   );
                 })}

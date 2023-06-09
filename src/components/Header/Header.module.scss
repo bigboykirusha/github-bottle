@@ -11,6 +11,7 @@
   display: flex;
   column-gap: 50px;
   text-transform: uppercase;
+  align-items: center;
   @media (max-width: 450px) {
     margin-bottom: 20px;
     justify-content: space-around;

@@ -10,6 +10,7 @@ export type Items = {
   forks: number;
   open_issues: number;
   owner: any;
+  html_url: string;
 };
 
 const MainLayout = () => {
